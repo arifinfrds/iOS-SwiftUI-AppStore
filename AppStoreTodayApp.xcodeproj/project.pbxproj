@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		414A928D272BEDF600424D06 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A928C272BEDF600424D06 /* TodayCell.swift */; };
+		414A928F272BF90600424D06 /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A928E272BF90600424D06 /* ProfileButton.swift */; };
 		41ACFD26272BE206006076BA /* AppStoreTodayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACFD25272BE206006076BA /* AppStoreTodayApp.swift */; };
 		41ACFD28272BE206006076BA /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACFD27272BE206006076BA /* TodayView.swift */; };
 		41ACFD2A272BE207006076BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41ACFD29272BE207006076BA /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		414A928C272BEDF600424D06 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
+		414A928E272BF90600424D06 /* ProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
 		41ACFD22272BE206006076BA /* AppStoreTodayApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreTodayApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41ACFD25272BE206006076BA /* AppStoreTodayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreTodayApp.swift; sourceTree = "<group>"; };
 		41ACFD27272BE206006076BA /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				41ACFD29272BE207006076BA /* Assets.xcassets */,
 				41ACFD2B272BE207006076BA /* Preview Content */,
 				414A928C272BEDF600424D06 /* TodayCell.swift */,
+				414A928E272BF90600424D06 /* ProfileButton.swift */,
 			);
 			path = AppStoreTodayApp;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				41ACFD28272BE206006076BA /* TodayView.swift in Sources */,
 				41ACFD26272BE206006076BA /* AppStoreTodayApp.swift in Sources */,
 				414A928D272BEDF600424D06 /* TodayCell.swift in Sources */,
+				414A928F272BF90600424D06 /* ProfileButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
