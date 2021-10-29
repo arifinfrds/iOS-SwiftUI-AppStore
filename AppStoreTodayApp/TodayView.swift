@@ -9,12 +9,15 @@ import SwiftUI
 
 struct TodayView: View {
 	var body: some View {
-		GeometryReader { proxy in
-			List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
-				TodayCell()
-					.frame(width: .infinity, height: 450, alignment: .center)
+		NavigationView {
+			GeometryReader { proxy in
+				List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
+					TodayCell()
+						.frame(width: .infinity, height: 450, alignment: .center)
+				}
+				.listStyle(PlainListStyle())
 			}
-			.listStyle(PlainListStyle())
+			.navigationBarTitle(Text("Today"), displayMode: .large)
 		}
     }
 }
