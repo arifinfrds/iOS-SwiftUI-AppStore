@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		41ACFD26272BE206006076BA /* AppStoreTodayAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACFD25272BE206006076BA /* AppStoreTodayAppApp.swift */; };
-		41ACFD28272BE206006076BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACFD27272BE206006076BA /* ContentView.swift */; };
+		414A928D272BEDF600424D06 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A928C272BEDF600424D06 /* TodayCell.swift */; };
+		41ACFD26272BE206006076BA /* AppStoreTodayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACFD25272BE206006076BA /* AppStoreTodayApp.swift */; };
+		41ACFD28272BE206006076BA /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACFD27272BE206006076BA /* TodayView.swift */; };
 		41ACFD2A272BE207006076BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41ACFD29272BE207006076BA /* Assets.xcassets */; };
 		41ACFD2D272BE207006076BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41ACFD2C272BE207006076BA /* Preview Assets.xcassets */; };
 		41ACFD37272BE207006076BA /* AppStoreTodayAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACFD36272BE207006076BA /* AppStoreTodayAppTests.swift */; };
@@ -34,9 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		414A928C272BEDF600424D06 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
 		41ACFD22272BE206006076BA /* AppStoreTodayApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreTodayApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		41ACFD25272BE206006076BA /* AppStoreTodayAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreTodayAppApp.swift; sourceTree = "<group>"; };
-		41ACFD27272BE206006076BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		41ACFD25272BE206006076BA /* AppStoreTodayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreTodayApp.swift; sourceTree = "<group>"; };
+		41ACFD27272BE206006076BA /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		41ACFD29272BE207006076BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41ACFD2C272BE207006076BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		41ACFD32272BE207006076BA /* AppStoreTodayAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppStoreTodayAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,10 +96,11 @@
 		41ACFD24272BE206006076BA /* AppStoreTodayApp */ = {
 			isa = PBXGroup;
 			children = (
-				41ACFD25272BE206006076BA /* AppStoreTodayAppApp.swift */,
-				41ACFD27272BE206006076BA /* ContentView.swift */,
+				41ACFD25272BE206006076BA /* AppStoreTodayApp.swift */,
+				41ACFD27272BE206006076BA /* TodayView.swift */,
 				41ACFD29272BE207006076BA /* Assets.xcassets */,
 				41ACFD2B272BE207006076BA /* Preview Content */,
+				414A928C272BEDF600424D06 /* TodayCell.swift */,
 			);
 			path = AppStoreTodayApp;
 			sourceTree = "<group>";
@@ -257,8 +260,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41ACFD28272BE206006076BA /* ContentView.swift in Sources */,
-				41ACFD26272BE206006076BA /* AppStoreTodayAppApp.swift in Sources */,
+				41ACFD28272BE206006076BA /* TodayView.swift in Sources */,
+				41ACFD26272BE206006076BA /* AppStoreTodayApp.swift in Sources */,
+				414A928D272BEDF600424D06 /* TodayCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
