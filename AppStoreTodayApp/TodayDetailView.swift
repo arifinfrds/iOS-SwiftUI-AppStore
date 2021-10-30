@@ -8,21 +8,31 @@
 import SwiftUI
 
 struct TodayDetailView: View {
-	var body: some View {
-		GeometryReader { proxy in
-			ScrollView {
-				VStack {
-					Image(systemName: "photo")
-						.resizable()
-						.frame(width: proxy.size.width, height: 100, alignment: .center)
 
-					VStack(alignment: .leading, spacing: 10) {
-						Text(anyText())
-						TodayDetailFooterView()
-							.frame(width: proxy.size.width, height: 150, alignment: .center)
+	@Environment(\.presentationMode) var presentationMode
+
+	var body: some View {
+		NavigationView {
+			GeometryReader { proxy in
+				ScrollView {
+					VStack {
+						Image(systemName: "")
+							.resizable()
+							.frame(width: proxy.size.width, height: 300, alignment: .center)
+							.background(Color.blue)
+
+						VStack(alignment: .leading, spacing: 10) {
+							Text(anyText())
+							TodayDetailFooterView()
+								.frame(width: proxy.size.width, height: 150, alignment: .center)
+						}
 					}
 				}
 			}
+			.navigationBarTitle(Text("Detail"), displayMode: .inline)
+			.navigationBarItems(trailing: BarButtonItemView(onTapView: {
+				presentationMode.wrappedValue.dismiss()
+			}))
 		}
 	}
 }

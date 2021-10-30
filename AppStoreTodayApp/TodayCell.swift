@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct TodayCell: View {
-    var body: some View {
+
+	var onTapCell: (() -> Void)
+
+	var body: some View {
 		GeometryReader { proxy in
 			// Cell
 			VStack {
@@ -43,15 +46,16 @@ struct TodayCell: View {
 				RoundedRectangle(cornerRadius: 8)
 					.stroke(Color.secondary, lineWidth: 0.25)
 			)
+			.onTapGesture(perform: onTapCell)
 		}
-    }
+	}
 }
 
 struct TodayCell_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		TodayView()
 			.previewDevice("iPhone 13 mini")
 		TodayView()
 			.previewDevice("iPhone 13 Pro Max")
-    }
+	}
 }
