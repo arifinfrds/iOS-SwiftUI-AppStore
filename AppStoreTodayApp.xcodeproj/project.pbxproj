@@ -16,8 +16,8 @@
 		41ACFD28272BE206006076BA /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACFD27272BE206006076BA /* TodayView.swift */; };
 		41ACFD2A272BE207006076BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41ACFD29272BE207006076BA /* Assets.xcassets */; };
 		41ACFD2D272BE207006076BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41ACFD2C272BE207006076BA /* Preview Assets.xcassets */; };
-		41ACFD37272BE207006076BA /* AppStoreTodayAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACFD36272BE207006076BA /* AppStoreTodayAppTests.swift */; };
 		41AF963E272FC9C600AFD8EA /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AF963D272FC9C600AFD8EA /* SheetView.swift */; };
+		41AF9642272FCB6400AFD8EA /* LoadTodayItemsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AF9641272FCB6400AFD8EA /* LoadTodayItemsUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +42,9 @@
 		41ACFD29272BE207006076BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41ACFD2C272BE207006076BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		41ACFD32272BE207006076BA /* AppStoreTodayAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppStoreTodayAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		41ACFD36272BE207006076BA /* AppStoreTodayAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreTodayAppTests.swift; sourceTree = "<group>"; };
 		41AF963D272FC9C600AFD8EA /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+		41AF9640272FCB6300AFD8EA /* AppStoreTodayAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppStoreTodayAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		41AF9641272FCB6400AFD8EA /* LoadTodayItemsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTodayItemsUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +105,7 @@
 		41ACFD35272BE207006076BA /* AppStoreTodayAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				41ACFD36272BE207006076BA /* AppStoreTodayAppTests.swift */,
+				41AF963F272FCB3D00AFD8EA /* Feature */,
 			);
 			path = AppStoreTodayAppTests;
 			sourceTree = "<group>";
@@ -137,6 +138,15 @@
 				41AF963D272FC9C600AFD8EA /* SheetView.swift */,
 			);
 			path = TodayList;
+			sourceTree = "<group>";
+		};
+		41AF963F272FCB3D00AFD8EA /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				41AF9641272FCB6400AFD8EA /* LoadTodayItemsUseCaseTests.swift */,
+				41AF9640272FCB6300AFD8EA /* AppStoreTodayAppTests-Bridging-Header.h */,
+			);
+			path = Feature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +202,7 @@
 					};
 					41ACFD31272BE207006076BA = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1300;
 						TestTargetID = 41ACFD21272BE206006076BA;
 					};
 				};
@@ -254,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41ACFD37272BE207006076BA /* AppStoreTodayAppTests.swift in Sources */,
+				41AF9642272FCB6400AFD8EA /* LoadTodayItemsUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +459,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -461,6 +473,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.arifinfrds.AppStoreTodayAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "AppStoreTodayAppTests/Feature/AppStoreTodayAppTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppStoreTodayApp.app/AppStoreTodayApp";
@@ -472,6 +486,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -485,6 +500,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.arifinfrds.AppStoreTodayAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "AppStoreTodayAppTests/Feature/AppStoreTodayAppTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppStoreTodayApp.app/AppStoreTodayApp";
