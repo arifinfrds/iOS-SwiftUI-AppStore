@@ -30,23 +30,30 @@ final class RemoteTodayItemsLoader: TodayItemsLoader {
 	}
 
 	func load(completion: (Result<[TodayItem], Error>) -> Void) {
-
+		let sampleURL = URL(string: "any-url.com")!
+		httpClient.get(from: sampleURL) { _ in }
 	}
 }
 
 class LoadTodayItemsUseCaseTests: XCTestCase {
 
-	func test_init() {
+	func test_load_executeGetMethodFromHTTPClient() {
 		let client = HTTPClientSpy()
-		_ = RemoteTodayItemsLoader(httpClient: client)
+		let sut = RemoteTodayItemsLoader(httpClient: client)
+
+		sut.load { _ in }
+
+		XCTAssertEqual(client.callCount, 1)
 	}
 
 	// MARK: - Helpers
 
 	private class HTTPClientSpy: HTTPClient {
-		
-		func get(from url: URL, completion: ((Data, HTTPURLResponse)) -> Void) {
 
+		var callCount = 0
+
+		func get(from url: URL, completion: ((Data, HTTPURLResponse)) -> Void) {
+			callCount += 1
 		}
 	}
 
