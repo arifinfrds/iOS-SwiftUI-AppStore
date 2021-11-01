@@ -38,12 +38,13 @@ final class RemoteTodayItemsLoader: TodayItemsLoader {
 class LoadTodayItemsUseCaseTests: XCTestCase {
 
 	func test_load_executeGetMethodFromHTTPClient() {
+		let sampleURL = URL(string: "any-url.com")!
 		let client = HTTPClientSpy()
 		let sut = RemoteTodayItemsLoader(httpClient: client)
 
 		sut.load { _ in }
 
-		XCTAssertEqual(client.messages.count, 1)
+		XCTAssertEqual(client.messages, [ .get(sampleURL) ])
 	}
 
 	// MARK: - Helpers
@@ -52,7 +53,7 @@ class LoadTodayItemsUseCaseTests: XCTestCase {
 
 		var messages = [Message]()
 
-		enum Message {
+		enum Message: Equatable {
 			case get(URL)
 		}
 
