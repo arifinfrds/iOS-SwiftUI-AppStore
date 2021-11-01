@@ -19,6 +19,7 @@
 		41ACFD37272BE207006076BA /* AppStoreTodayAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACFD36272BE207006076BA /* AppStoreTodayAppTests.swift */; };
 		41ACFD41272BE207006076BA /* AppStoreTodayAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACFD40272BE207006076BA /* AppStoreTodayAppUITests.swift */; };
 		41ACFD43272BE207006076BA /* AppStoreTodayAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACFD42272BE207006076BA /* AppStoreTodayAppUITestsLaunchTests.swift */; };
+		41AF963E272FC9C600AFD8EA /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AF963D272FC9C600AFD8EA /* SheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		41ACFD3C272BE207006076BA /* AppStoreTodayAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppStoreTodayAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41ACFD40272BE207006076BA /* AppStoreTodayAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreTodayAppUITests.swift; sourceTree = "<group>"; };
 		41ACFD42272BE207006076BA /* AppStoreTodayAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreTodayAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		41AF963D272FC9C600AFD8EA /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				41ACFD27272BE206006076BA /* TodayView.swift */,
 				414A928C272BEDF600424D06 /* TodayCell.swift */,
 				414A928E272BF90600424D06 /* ProfileButton.swift */,
+				41AF963D272FC9C600AFD8EA /* SheetView.swift */,
 			);
 			path = TodayList;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				41ACFD26272BE206006076BA /* AppStoreTodayApp.swift in Sources */,
 				41139C9B272CFF170083D3F0 /* TodayDetailView.swift in Sources */,
 				414A928D272BEDF600424D06 /* TodayCell.swift in Sources */,
+				41AF963E272FC9C600AFD8EA /* SheetView.swift in Sources */,
 				414A928F272BF90600424D06 /* ProfileButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,7 +18,7 @@ struct TodayCell: View {
 
 				// ContentView
 				VStack(alignment: .leading, spacing: 10.0) {
-
+					
 					Text("LIFE HACK")
 						.font(.headline)
 						.fontWeight(.semibold)
