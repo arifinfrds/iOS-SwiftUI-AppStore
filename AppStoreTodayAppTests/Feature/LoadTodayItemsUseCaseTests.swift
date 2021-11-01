@@ -43,17 +43,21 @@ class LoadTodayItemsUseCaseTests: XCTestCase {
 
 		sut.load { _ in }
 
-		XCTAssertEqual(client.callCount, 1)
+		XCTAssertEqual(client.messages.count, 1)
 	}
 
 	// MARK: - Helpers
 
 	private class HTTPClientSpy: HTTPClient {
 
-		var callCount = 0
+		var messages = [Message]()
+
+		enum Message {
+			case get(URL)
+		}
 
 		func get(from url: URL, completion: ((Data, HTTPURLResponse)) -> Void) {
-			callCount += 1
+			messages.append(.get(url))
 		}
 	}
 
