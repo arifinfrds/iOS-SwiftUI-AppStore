@@ -104,15 +104,10 @@
 		41ACFD24272BE206006076BA /* AppStoreTodayApp */ = {
 			isa = PBXGroup;
 			children = (
+				41AF963A272FC8D300AFD8EA /* Today */,
 				41ACFD25272BE206006076BA /* AppStoreTodayApp.swift */,
-				41ACFD27272BE206006076BA /* TodayView.swift */,
 				41ACFD29272BE207006076BA /* Assets.xcassets */,
 				41ACFD2B272BE207006076BA /* Preview Content */,
-				414A928C272BEDF600424D06 /* TodayCell.swift */,
-				414A928E272BF90600424D06 /* ProfileButton.swift */,
-				41139C9A272CFF170083D3F0 /* TodayDetailView.swift */,
-				41139C9C272D01210083D3F0 /* TodayDetailFooterView.swift */,
-				41139CA0272D06FF0083D3F0 /* BarButtonItemView.swift */,
 			);
 			path = AppStoreTodayApp;
 			sourceTree = "<group>";
@@ -140,6 +135,35 @@
 				41ACFD42272BE207006076BA /* AppStoreTodayAppUITestsLaunchTests.swift */,
 			);
 			path = AppStoreTodayAppUITests;
+			sourceTree = "<group>";
+		};
+		41AF963A272FC8D300AFD8EA /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				41AF963C272FC93200AFD8EA /* TodayList */,
+				41AF963B272FC92500AFD8EA /* TodayDetail */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		41AF963B272FC92500AFD8EA /* TodayDetail */ = {
+			isa = PBXGroup;
+			children = (
+				41139C9A272CFF170083D3F0 /* TodayDetailView.swift */,
+				41139C9C272D01210083D3F0 /* TodayDetailFooterView.swift */,
+				41139CA0272D06FF0083D3F0 /* BarButtonItemView.swift */,
+			);
+			path = TodayDetail;
+			sourceTree = "<group>";
+		};
+		41AF963C272FC93200AFD8EA /* TodayList */ = {
+			isa = PBXGroup;
+			children = (
+				41ACFD27272BE206006076BA /* TodayView.swift */,
+				414A928C272BEDF600424D06 /* TodayCell.swift */,
+				414A928E272BF90600424D06 /* ProfileButton.swift */,
+			);
+			path = TodayList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

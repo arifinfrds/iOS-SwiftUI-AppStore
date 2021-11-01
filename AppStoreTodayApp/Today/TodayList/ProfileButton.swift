@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ProfileButton: View {
-
+	
 	var onTapView: (() -> Void)?
-
+	
 	var body: some View {
 		Button {
 			onTapView?()
