@@ -40,8 +40,7 @@ class RemoteTodayItemsLoaderTests: XCTestCase {
 
 	func test_load_executeGetMethodFromHTTPClient() {
 		let givenURL = anyURL()
-		let client = HTTPClientSpy()
-		let sut = RemoteTodayItemsLoader(url: givenURL, httpClient: client)
+		let (sut, client) = makeSUT(url: givenURL)
 
 		sut.load { _ in }
 
@@ -50,8 +49,7 @@ class RemoteTodayItemsLoaderTests: XCTestCase {
 
 	func test_loadTwice_executeTwice() {
 		let givenURL = anyURL()
-		let client = HTTPClientSpy()
-		let sut = RemoteTodayItemsLoader(url: givenURL, httpClient: client)
+		let (sut, client) = makeSUT(url: givenURL)
 
 		sut.load { _ in }
 		sut.load { _ in }
@@ -60,6 +58,12 @@ class RemoteTodayItemsLoaderTests: XCTestCase {
 	}
 
 	// MARK: - Helpers
+
+	private func makeSUT(url: URL) -> (sut: RemoteTodayItemsLoader, client: HTTPClientSpy) {
+		let client = HTTPClientSpy()
+		let sut = RemoteTodayItemsLoader(url: url, httpClient: client)
+		return (sut, client)
+	}
 
 	private func anyURL() -> URL {
 		URL(string: "any-url.com")!
