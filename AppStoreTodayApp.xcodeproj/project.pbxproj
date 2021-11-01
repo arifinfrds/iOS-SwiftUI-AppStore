@@ -17,7 +17,7 @@
 		41ACFD2A272BE207006076BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41ACFD29272BE207006076BA /* Assets.xcassets */; };
 		41ACFD2D272BE207006076BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41ACFD2C272BE207006076BA /* Preview Assets.xcassets */; };
 		41AF963E272FC9C600AFD8EA /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AF963D272FC9C600AFD8EA /* SheetView.swift */; };
-		41AF9642272FCB6400AFD8EA /* LoadTodayItemsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AF9641272FCB6400AFD8EA /* LoadTodayItemsUseCaseTests.swift */; };
+		41AF9642272FCB6400AFD8EA /* RemoteTodayItemsLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AF9641272FCB6400AFD8EA /* RemoteTodayItemsLoaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,7 @@
 		41ACFD32272BE207006076BA /* AppStoreTodayAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppStoreTodayAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AF963D272FC9C600AFD8EA /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		41AF9640272FCB6300AFD8EA /* AppStoreTodayAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppStoreTodayAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		41AF9641272FCB6400AFD8EA /* LoadTodayItemsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTodayItemsUseCaseTests.swift; sourceTree = "<group>"; };
+		41AF9641272FCB6400AFD8EA /* RemoteTodayItemsLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTodayItemsLoaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +143,7 @@
 		41AF963F272FCB3D00AFD8EA /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				41AF9641272FCB6400AFD8EA /* LoadTodayItemsUseCaseTests.swift */,
+				41AF9641272FCB6400AFD8EA /* RemoteTodayItemsLoaderTests.swift */,
 				41AF9640272FCB6300AFD8EA /* AppStoreTodayAppTests-Bridging-Header.h */,
 			);
 			path = Feature;
@@ -265,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41AF9642272FCB6400AFD8EA /* LoadTodayItemsUseCaseTests.swift in Sources */,
+				41AF9642272FCB6400AFD8EA /* RemoteTodayItemsLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

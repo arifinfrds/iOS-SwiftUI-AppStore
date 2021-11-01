@@ -1,5 +1,5 @@
 //
-//  LoadTodayItemsUseCaseTests.swift
+//  RemoteTodayItemsLoaderTests.swift
 //  AppStoreTodayAppTests
 //
 //  Created by Arifin Firdaus on 01/11/21.
@@ -36,7 +36,7 @@ final class RemoteTodayItemsLoader: TodayItemsLoader {
 	}
 }
 
-class LoadTodayItemsUseCaseTests: XCTestCase {
+class RemoteTodayItemsLoaderTests: XCTestCase {
 
 	func test_load_executeGetMethodFromHTTPClient() {
 		let givenURL = anyURL()
@@ -46,6 +46,17 @@ class LoadTodayItemsUseCaseTests: XCTestCase {
 		sut.load { _ in }
 
 		XCTAssertEqual(client.messages, [ .get(givenURL) ])
+	}
+
+	func test_loadTwice_executeTwice() {
+		let givenURL = anyURL()
+		let client = HTTPClientSpy()
+		let sut = RemoteTodayItemsLoader(url: givenURL, httpClient: client)
+
+		sut.load { _ in }
+		sut.load { _ in }
+
+		XCTAssertEqual(client.messages, [ .get(givenURL), .get(givenURL) ])
 	}
 
 	// MARK: - Helpers
