@@ -8,7 +8,8 @@
 import XCTest
 
 protocol HTTPClient {
-	func get(from url: URL, completion: ((Data, HTTPURLResponse)) -> Void)
+	typealias Result = (Data, HTTPURLResponse)
+	func get(from url: URL, completion: @escaping (Result) -> Void)
 }
 
 struct TodayItem {
@@ -44,7 +45,7 @@ class RemoteTodayItemsLoaderTests: XCTestCase {
 
 		sut.load { _ in }
 
-		XCTAssertEqual(client.messages, [ .get(givenURL) ])
+		XCTAssertEqual(client.requestedURLs, [ givenURL ])
 	}
 
 	func test_loadTwice_executeTwice() {
@@ -54,7 +55,7 @@ class RemoteTodayItemsLoaderTests: XCTestCase {
 		sut.load { _ in }
 		sut.load { _ in }
 
-		XCTAssertEqual(client.messages, [ .get(givenURL), .get(givenURL) ])
+		XCTAssertEqual(client.requestedURLs, [ givenURL, givenURL ])
 	}
 
 	// MARK: - Helpers
@@ -71,14 +72,14 @@ class RemoteTodayItemsLoaderTests: XCTestCase {
 
 	private class HTTPClientSpy: HTTPClient {
 
-		var messages = [Message]()
-
-		enum Message: Equatable {
-			case get(URL)
+		private var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
+		
+		var requestedURLs: [URL] {
+			messages.map { $0.url }
 		}
 
-		func get(from url: URL, completion: ((Data, HTTPURLResponse)) -> Void) {
-			messages.append(.get(url))
+		func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
+			messages.append((url, completion))
 		}
 	}
 
