@@ -39,6 +39,13 @@ final class RemoteTodayItemsLoader: TodayItemsLoader {
 
 class RemoteTodayItemsLoaderTests: XCTestCase {
 
+	func test_init_doesNotRequestWithURL() {
+		let givenURL = anyURL()
+		let (_, client) = makeSUT(url: givenURL)
+
+		XCTAssertTrue(client.requestedURLs.isEmpty)
+	}
+
 	func test_load_executeGetMethodFromHTTPClient() {
 		let givenURL = anyURL()
 		let (sut, client) = makeSUT(url: givenURL)
@@ -73,7 +80,7 @@ class RemoteTodayItemsLoaderTests: XCTestCase {
 	private class HTTPClientSpy: HTTPClient {
 
 		private var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
-		
+
 		var requestedURLs: [URL] {
 			messages.map { $0.url }
 		}
