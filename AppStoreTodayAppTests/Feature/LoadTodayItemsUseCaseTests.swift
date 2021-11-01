@@ -23,31 +23,36 @@ protocol TodayItemsLoader {
 }
 
 final class RemoteTodayItemsLoader: TodayItemsLoader {
+	private let url: URL
 	private let httpClient: HTTPClient
 
-	init(httpClient: HTTPClient) {
+	init(url: URL, httpClient: HTTPClient) {
+		self.url = url
 		self.httpClient = httpClient
 	}
 
 	func load(completion: (Result<[TodayItem], Error>) -> Void) {
-		let sampleURL = URL(string: "any-url.com")!
-		httpClient.get(from: sampleURL) { _ in }
+		httpClient.get(from: url) { _ in }
 	}
 }
 
 class LoadTodayItemsUseCaseTests: XCTestCase {
 
 	func test_load_executeGetMethodFromHTTPClient() {
-		let sampleURL = URL(string: "any-url.com")!
+		let givenURL = anyURL()
 		let client = HTTPClientSpy()
-		let sut = RemoteTodayItemsLoader(httpClient: client)
+		let sut = RemoteTodayItemsLoader(url: givenURL, httpClient: client)
 
 		sut.load { _ in }
 
-		XCTAssertEqual(client.messages, [ .get(sampleURL) ])
+		XCTAssertEqual(client.messages, [ .get(givenURL) ])
 	}
 
 	// MARK: - Helpers
+
+	private func anyURL() -> URL {
+		URL(string: "any-url.com")!
+	}
 
 	private class HTTPClientSpy: HTTPClient {
 
