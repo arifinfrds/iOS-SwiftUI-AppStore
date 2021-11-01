@@ -8,7 +8,7 @@
 import XCTest
 
 protocol HTTPClient {
-	typealias Result = (Data, HTTPURLResponse)
+	typealias Result = Swift.Result<(Data, HTTPURLResponse), Error>
 	func get(from url: URL, completion: @escaping (Result) -> Void)
 }
 
@@ -20,7 +20,7 @@ struct TodayItem {
 }
 
 protocol TodayItemsLoader {
-	func load(completion: (Result<[TodayItem], Error>) -> Void)
+	func load(completion: @escaping (Result<[TodayItem], Error>) -> Void)
 }
 
 final class RemoteTodayItemsLoader: TodayItemsLoader {
@@ -32,8 +32,15 @@ final class RemoteTodayItemsLoader: TodayItemsLoader {
 		self.httpClient = httpClient
 	}
 
-	func load(completion: (Result<[TodayItem], Error>) -> Void) {
-		httpClient.get(from: url) { _ in }
+	func load(completion: @escaping (Result<[TodayItem], Error>) -> Void) {
+		httpClient.get(from: url) { result in
+			switch result {
+			case let .failure(error):
+				completion(.failure(error))
+			default:
+				break
+			}
+		}
 	}
 }
 
@@ -65,6 +72,30 @@ class RemoteTodayItemsLoaderTests: XCTestCase {
 		XCTAssertEqual(client.requestedURLs, [ givenURL, givenURL ])
 	}
 
+	func test_load_deliversErrorOnClientError() {
+		let givenURL = anyURL()
+		let (sut, client) = makeSUT(url: givenURL)
+		let clientError = anyNSError()
+		var receivedError: NSError?
+		let exp = expectation(description: "Wait for completion")
+
+		sut.load { result in
+			switch result {
+			case let .failure(error):
+				receivedError = error as NSError
+			case let .success(items):
+				XCTFail("Expect failure, but got success instead with items: \(items)")
+			}
+			exp.fulfill()
+		}
+		client.complete(with: clientError)
+		
+		wait(for: [exp], timeout: 0.1)
+
+		XCTAssertEqual(receivedError!.domain, clientError.domain)
+		XCTAssertEqual(receivedError!.code, clientError.code)
+	}
+
 	// MARK: - Helpers
 
 	private func makeSUT(url: URL) -> (sut: RemoteTodayItemsLoader, client: HTTPClientSpy) {
@@ -77,6 +108,10 @@ class RemoteTodayItemsLoaderTests: XCTestCase {
 		URL(string: "any-url.com")!
 	}
 
+	private func anyNSError() -> NSError {
+		NSError(domain: "Error", code: 1)
+	}
+
 	private class HTTPClientSpy: HTTPClient {
 
 		private var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
@@ -87,6 +122,11 @@ class RemoteTodayItemsLoaderTests: XCTestCase {
 
 		func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
 			messages.append((url, completion))
+		}
+
+		func complete(with error: Error, at index: Int = 0) {
+			let message = messages[index]
+			message.completion(.failure(error))
 		}
 	}
 
