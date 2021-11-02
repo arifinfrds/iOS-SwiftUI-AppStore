@@ -18,6 +18,7 @@
 		41ACFD2D272BE207006076BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41ACFD2C272BE207006076BA /* Preview Assets.xcassets */; };
 		41AF963E272FC9C600AFD8EA /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AF963D272FC9C600AFD8EA /* SheetView.swift */; };
 		41AF9642272FCB6400AFD8EA /* RemoteTodayItemsLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AF9641272FCB6400AFD8EA /* RemoteTodayItemsLoaderTests.swift */; };
+		41C610532731338A00603402 /* ActivityViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C610522731338A00603402 /* ActivityViewAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		41AF963D272FC9C600AFD8EA /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		41AF9640272FCB6300AFD8EA /* AppStoreTodayAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppStoreTodayAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		41AF9641272FCB6400AFD8EA /* RemoteTodayItemsLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTodayItemsLoaderTests.swift; sourceTree = "<group>"; };
+		41C610522731338A00603402 /* ActivityViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				41139C9A272CFF170083D3F0 /* TodayDetailView.swift */,
 				41139C9C272D01210083D3F0 /* TodayDetailFooterView.swift */,
 				41139CA0272D06FF0083D3F0 /* BarButtonItemView.swift */,
+				41C610522731338A00603402 /* ActivityViewAdapter.swift */,
 			);
 			path = TodayDetail;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			files = (
 				41139CA1272D06FF0083D3F0 /* BarButtonItemView.swift in Sources */,
 				41139C9D272D01210083D3F0 /* TodayDetailFooterView.swift in Sources */,
+				41C610532731338A00603402 /* ActivityViewAdapter.swift in Sources */,
 				41ACFD28272BE206006076BA /* TodayView.swift in Sources */,
 				41ACFD26272BE206006076BA /* AppStoreTodayApp.swift in Sources */,
 				41139C9B272CFF170083D3F0 /* TodayDetailView.swift in Sources */,

@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct TodayDetailFooterView: View {
+
+	@State private var shouldShowActivityView = false
+
 	var body: some View {
 		ZStack(alignment: .center) {
 			Rectangle()
 				.foregroundColor(.white)
 
-			Button(action: {}) {
+			Button(action: {
+				self.shouldShowActivityView = true
+			}) {
 				HStack {
 					Image(systemName: "square.and.arrow.up")
 					Text("Share Story")
@@ -27,7 +32,12 @@ struct TodayDetailFooterView: View {
 					.stroke(.white, lineWidth: 1)
 			)
 		}
+		.sheet(isPresented: $shouldShowActivityView, onDismiss: nil) {
+			let sharedItem = "Hi, share me!"
+			ActivityViewAdapter(activityItems: [sharedItem], applicationActivities: nil)
+		}
 	}
+
 }
 
 struct TodayDetailFooterView_Previews: PreviewProvider {
